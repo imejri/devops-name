@@ -13,6 +13,7 @@ pipeline {
         
         string(name: 'Name', defaultValue: 'issam', description: "Name of the devops")
         string(name: 'Last_Name', defaultValue: 'mejri', description: "Last Name of the devops")
+        string(name: 'SERVICE', defaultValue: '', description: "The name of the service")
     }
     
     stages {
@@ -39,7 +40,7 @@ pipeline {
     
     post { 
         success { 
-            echo "Notre ingénieur DevOps est ${params.Name} ${params.Last_Name}"
+            echo "Notre ingénieur DevOps est ${params.Name} ${params.Last_Name} qui est affecté au service ${params.SERVICE}"
         }
     }
     
